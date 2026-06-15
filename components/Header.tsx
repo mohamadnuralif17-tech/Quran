@@ -1,29 +1,70 @@
 'use client';
 
-import { Moon, Sun } from 'lucide-react';
+import Link from 'next/link';
+import { useState } from 'react';
+import { useQuranStore } from '@/store/quranStore';
 
-interface HeaderProps {
-  darkMode: boolean;
-  onDarkModeToggle: () => void;
-}
+export default function Header() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { darkMode, toggleDarkMode } = useQuranStore();
 
-export default function Header({ darkMode, onDarkModeToggle }: HeaderProps) {
   return (
-    <header className={`${darkMode ? 'bg-gray-900 text-white' : 'bg-quran-primary text-white'} shadow-lg`}>
-      <div className="container mx-auto px-4 py-6">
-        <div className="flex justify-between items-center">
-          <div>
-            <h1 className="text-3xl font-bold">🕌 Quran Hub</h1>
-            <p className="text-sm opacity-90">Baca dan Pelajari Al-Quran Digital</p>
+    <header className="bg-quran-primary dark:bg-quran-secondary text-white shadow-lg">
+      <nav className="container mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Logo */}
+        <Link href="/" className="flex items-center space-x-2">
+          <div className="w-10 h-10 bg-quran-accent rounded-lg flex items-center justify-center">
+            <span className="text-quran-primary font-bold text-lg">ق</span>
           </div>
+          <span className="font-bold text-xl hidden sm:inline">Quran Hub</span>
+        </Link>
+
+        {/* Navigation Links */}
+        <div className="hidden md:flex items-center space-x-6">
+          <Link href="/" className="hover:text-quran-accent transition">
+            Home
+          </Link>
+          <Link href="/bookmarks" className="hover:text-quran-accent transition">
+            Bookmarks
+          </Link>
+          <Link href="/about" className="hover:text-quran-accent transition">
+            Tentang
+          </Link>
+        </div>
+
+        {/* Dark Mode Toggle & Mobile Menu */}
+        <div className="flex items-center space-x-4">
           <button
-            onClick={onDarkModeToggle}
-            className="p-2 rounded-full hover:bg-opacity-80 transition"
+            onClick={toggleDarkMode}
+            className="p-2 rounded-lg bg-quran-secondary dark:bg-quran-primary hover:bg-opacity-80 transition"
+            aria-label="Toggle dark mode"
           >
-            {darkMode ? <Sun size={24} /> : <Moon size={24} />}
+            {darkMode ? '☀️' : '🌙'}
+          </button>
+          <button
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+            className="md:hidden p-2"
+            aria-label="Toggle menu"
+          >
+            ☰
           </button>
         </div>
-      </div>
+      </nav>
+
+      {/* Mobile Menu */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-quran-secondary px-4 py-2 space-y-2">
+          <Link href="/" className="block py-2 hover:text-quran-accent">
+            Home
+          </Link>
+          <Link href="/bookmarks" className="block py-2 hover:text-quran-accent">
+            Bookmarks
+          </Link>
+          <Link href="/about" className="block py-2 hover:text-quran-accent">
+            Tentang
+          </Link>
+        </div>
+      )}
     </header>
   );
 }
