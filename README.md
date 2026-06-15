@@ -1,108 +1,86 @@
-# 🕌 Quran Hub - Al-Quran Digital
+# Quran Hub - Al-Quran Digital Platform
 
-Website interaktif untuk membaca dan mempelajari Al-Quran dengan terjemahan bahasa Indonesia.
+![License](https://img.shields.io/badge/license-MIT-blue.svg)
+![Next.js](https://img.shields.io/badge/Next.js-13+-black.svg)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0+-blue.svg)
+![Tailwind CSS](https://img.shields.io/badge/Tailwind-3.0+-38B2AC.svg)
 
-## 🎯 Fitur
+Quran Hub adalah platform digital interaktif untuk membaca dan mempelajari Al-Quran dengan terjemahan bahasa Indonesia. Aplikasi ini dibangun dengan teknologi modern untuk memberikan pengalaman pengguna yang optimal di semua perangkat.
 
-- ✅ Daftar lengkap 114 Surah
-- ✅ Tampilan ayat dengan teks Arab
-- ✅ Terjemahan bahasa Indonesia
-- ✅ Sistem bookmark/penanda
-- ✅ Dark mode
-- ✅ Responsive design (mobile-friendly)
-- ✅ Pencarian ayat
-- ✅ Audio recitation (coming soon)
-- ✅ Tafsir Al-Quran (coming soon)
+## Fitur Utama
 
-## 🚀 Tech Stack
+- Baca 114 Surah - Akses lengkap ke semua surah Al-Quran
+- Terjemahan Indonesia - Terjemahan akurat dalam bahasa Indonesia
+- Sistem Bookmark - Tandai ayat favorit untuk dibaca kemudian
+- Dark Mode - Mode gelap untuk kenyamanan membaca di malam hari
+- Responsive Design - Berfungsi sempurna di desktop, tablet, dan smartphone
+- Performance - Loading cepat dan smooth scrolling
 
-- **Frontend**: Next.js 14 + React 18
-- **Styling**: Tailwind CSS
-- **State Management**: Zustand
-- **API**: Quran.com API
-- **Icons**: Lucide React
-- **Language**: TypeScript
+## Tech Stack
 
-## 📦 Instalasi & Setup
+### Frontend
+- Next.js 13+ - React framework dengan Server Components
+- TypeScript - Type-safe development
+- Tailwind CSS - Utility-first CSS framework
+- Zustand - Lightweight state management
+- Axios - HTTP client untuk API requests
+
+### API
+- Quran.com API - Data Al-Quran yang komprehensif
+
+## Instalasi & Setup
 
 ### Prerequisites
-- Node.js 18+ dan npm/yarn
+- Node.js 16+
+- npm atau yarn
 
-### Langkah-langkah:
-
-```bash
-# 1. Clone repository
+### Clone Repository
 git clone https://github.com/mohamadnuralif17-tech/Quran.git
 cd Quran
 
-# 2. Install dependencies
+### Install Dependencies
 npm install
-# atau
-yarn install
 
-# 3. Development server
+### Setup Environment Variables
+cp .env.example .env.local
+
+### Run Development Server
 npm run dev
-# atau
-yarn dev
 
-# 4. Akses di browser
-# http://localhost:3000
-```
+Buka http://localhost:3000 di browser Anda.
 
-## 🔧 Build untuk Production
-
-```bash
+### Build untuk Production
 npm run build
-npm start
-```
+npm run start
 
-## 📱 Fitur-Fitur
+## Struktur Folder
 
-### 1. Membaca Surah
-- Pilih Surah dari daftar di sebelah kiri
-- Baca teks Arab dan terjemahan Indonesia
-- Lihat nomor ayat dan jumlah total ayah
+Quran/
+app/ - Next.js app directory
+components/ - React components
+lib/ - Utility functions dan API integration
+hooks/ - Custom React hooks
+store/ - Zustand state management
+public/ - Static assets
 
-### 2. Bookmark
-- Klik ikon bookmark pada setiap ayat untuk menyimpan
-- Akses ayat favorit dengan cepat
+## Kontribusi
 
-### 3. Dark Mode
-- Toggle dark mode dari header
-- Simpan preferensi di local storage
+Kontribusi sangat dihargai! Berikut langkah-langkahnya:
 
-### 4. Responsive Design
-- Optimal di desktop, tablet, dan mobile
-- Navigasi yang mudah di semua ukuran layar
+1. Fork repository ini
+2. Clone fork Anda
+3. Create branch fitur: git checkout -b feature/AmazingFeature
+4. Commit perubahan: git commit -m 'Add some AmazingFeature'
+5. Push ke branch: git push origin feature/AmazingFeature
+6. Open Pull Request
 
-## 🌐 API
+## License
 
-Proyek ini menggunakan **Quran.com API** yang gratis:
-- `https://api.quran.com/api/v4/chapters` - Daftar Surah
-- `https://api.quran.com/api/v4/verses` - Ayat dengan terjemahan
+Proyek ini dilisensikan di bawah MIT License.
 
-## 📝 TODO
+## Kontak
 
-- [ ] Implementasi fitur pencarian
-- [ ] Audio recitation dari Multiple Qaris
-- [ ] Tafsir lengkap Al-Quran
-- [ ] Share ayat ke media sosial
-- [ ] Progress membaca & statistik
-- [ ] Notifikasi waktu sholat
-- [ ] Integrasi dengan API lokal
+- Email: mohamadnuralif17@gmail.com
+- GitHub: @mohamadnuralif17-tech
 
-## 📄 Lisensi
-
-MIT License - Bebas digunakan untuk keperluan pribadi maupun komersial
-
-## 🤝 Kontribusi
-
-Silakan fork, buat branch baru, dan submit pull request untuk berkontribusi.
-
-## 📧 Kontak
-
-Jika ada pertanyaan atau saran, silakan buka issue di repository ini.
-
----
-
-**Terima kasih telah menggunakan Quran Hub!** 🤲
+Dibuat dengan hati oleh Mohamad Nur Alif
