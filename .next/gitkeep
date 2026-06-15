@@ -1,0 +1,29 @@
+# Next.js
+## Instrumentation hooks
+instrumentation.ts
+
+# Build
+.next
+/build
+
+# Dependencies
+node_modules
+
+# Testing
+.nyc_output
+coverage
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Environment
+.env.local
+.env.*.local
+
+# Vercel
+.vercel
